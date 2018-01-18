@@ -1,0 +1,39 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+*.iml
+*.class
+*.war
+*.ear
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+.classpath
+.project
+.settings
+classes
+
+*idea/
+target
+
+DatabaseConfig.java
+
+*.log
+
+
+/dibu-parent/dibu-service/src/main/java/com/daibugroup/service/handler/WithdrawHandler.java
+/dibu-cache/src/main/resources/redis.properties
+/dibu-parent/dibu-pay/src/main/java/com/daibugroup/pay/common/PayConstant.java
+/dibu-common/src/main/java/com/daibugroup/common/constant/GlobalConstant.java
+/dibu-db/src/main/java/com/daibugroup/db/DatabaseConfig.java
+dibu-parent/log.txt

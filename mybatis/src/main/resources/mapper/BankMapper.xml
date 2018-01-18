@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.seiya.mapper.BankMapper">
+  <resultMap id="BaseResultMap" type="cc.seiya.domain.Bank">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="bank_no" jdbcType="VARCHAR" property="bankNo" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="bin" jdbcType="VARCHAR" property="bin" />
+    <result column="length" jdbcType="TINYINT" property="length" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, bank_no, name, bin, length, type, type_name,code
+  </sql>
+
+  <select id="queryByBinCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from d_s_bank
+    where bin=#{binCode}
+    limit 1
+  </select>
+
+  <select id="queryById" parameterType="Long" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from d_s_bank
+    WHERE  id = ${id}
+  </select>
+
+</mapper>
