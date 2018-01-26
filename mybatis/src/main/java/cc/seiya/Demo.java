@@ -23,5 +23,8 @@ public class Demo {
         BankMapper bankMapper = session.getMapper(BankMapper.class);
         Bank bank = bankMapper.queryById(4123);
         System.out.println(bank);
+
+        bank = bankMapper.queryById(4123);
+        System.out.println(bank);
     }
 }

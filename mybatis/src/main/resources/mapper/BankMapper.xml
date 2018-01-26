@@ -28,7 +28,7 @@
     SELECT
     <include refid="Base_Column_List"/>
     from d_s_bank
-    WHERE  id = ${id}
+    WHERE  id = #{id}
   </select>
 
 </mapper>
