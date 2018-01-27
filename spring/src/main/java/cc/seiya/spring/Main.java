@@ -1,6 +1,8 @@
 package cc.seiya.spring;
 
 import cc.seiya.spring.service.SayService;
+import cc.seiya.spring.service.SpringSimpleMultiBean;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("bean.xml");
-        SayService sayService = ctx.getBean(SayService.class);
+        SpringSimpleMultiBean sayService = ctx.getBean(SpringSimpleMultiBean.class);
         sayService.say();
     }
 
