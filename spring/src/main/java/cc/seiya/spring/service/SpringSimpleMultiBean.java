@@ -65,7 +65,7 @@ public class SpringSimpleMultiBean implements BeanNameAware,BeanFactoryAware,Ini
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName)
 			throws BeansException {
-		System.out.println("BeanPostProcessor接口 before 初始化  postProcessAfterInitialization begin");
+		System.out.println("BeanPostProcessor接口 before 初始化  postProcessAfterInitialization begin,"+beanName+","+bean.toString());
 		return bean;
 	}
 
@@ -75,7 +75,7 @@ public class SpringSimpleMultiBean implements BeanNameAware,BeanFactoryAware,Ini
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName)
 			throws BeansException {
-		System.out.println("BeanPostProcessor接口after 初始化  postProcessAfterInitialization begin");
+		System.out.println("BeanPostProcessor接口after 初始化  postProcessAfterInitialization begin,"+beanName+","+bean.toString());
 		return bean;
 	}
 

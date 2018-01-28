@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @author: libo
  * @date: 2018/1/26 17:26
  */
-public class Main {
+public class ClasspathXmlApplicationContextMain {
 
     public static void main(String[] args) {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("bean.xml");
