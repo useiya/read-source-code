@@ -14,6 +14,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>5.0.3.RELEASE</spring.version>
+        <aspectj.version>1.8.13</aspectj.version>
     </properties>
 
     <dependencies>
@@ -24,15 +25,59 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
+            <artifactId>spring-context-support</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.6</version>
+        </dependency>
+
 
     </dependencies>
 
