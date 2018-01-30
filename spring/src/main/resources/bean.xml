@@ -13,6 +13,8 @@
   <bean id="springSimpleMultiBean" class="cc.seiya.spring.service.SpringSimpleMultiBean" init-method="initMethod"></bean>
   <bean id = "loggerAspect" class="cc.seiya.spring.aop.LoggerAspect" />
 
+  <context:component-scan base-package="cc.seiya" />
+
   <aop:config proxy-target-class="true">
     <!-- 用什么切 -->
     <aop:aspect id="logAspect" ref="loggerAspect">
