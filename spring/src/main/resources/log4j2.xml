@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><configuration status="warn">
+    <Properties>
+        <Property name="test1logDir">f://log/test1</Property>
+        <Property name="test1logFile">test1.log</Property>
+        <Property name="test1logRollingFile">test1Rolling.log</Property>
+
+        <Property name="test2logDir">f://log/test2</Property>
+        <Property name="test2logFile">test2.log</Property>
+        <Property name="test2logRollingFile">test2Rolling.log</Property>
+    </Properties>
+
+    <appenders>
+        <!--fileName中如果使用相对路径，则是相对于工程路径。这里是 工程路径/log/test1/test1.log-->
+        <File name="test1File" fileName="${test1logDir}/${test1logFile}" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss} %-5level %class{36}  %L %M - %msg%xEx%n"/>
+        </File>
+        <RollingFile name="test1RollingFile" fileName="${test1logDir}/${test1logRollingFile}" append="true"
+                     filePattern="${test1logDir}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="4 MB"/>
+        </RollingFile>
+
+        <File name="test2File" fileName="${test2logDir}/${test2logFile}" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss} %-5level %class{36}  %L %M - %msg%xEx%n"/>
+        </File>
+        <RollingFile name="test2RollingFile" fileName="${test2logDir}/${test2logRollingFile}" append="true"
+                     filePattern="log/test2/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="4 MB"/>
+        </RollingFile>
+    </appenders>
+
+    <loggers>
+        <Logger name="test1Logger" additivity="TRUE" level="ALL">
+            <AppenderRef ref="test1File" level="ALL" />
+            <AppenderRef ref="test1RollingFile" level="ALL" />
+        </Logger>
+        <Logger name="test2Logger" additivity="TRUE" level="ALL">
+            <AppenderRef ref="test2RollingFile" level="ALL" />
+        </Logger>
+    </loggers>
+</configuration>
